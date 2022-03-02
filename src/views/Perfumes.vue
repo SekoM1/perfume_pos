@@ -349,6 +349,11 @@ h1 {
 }
 .container{
   display: inline-flex;
+    align-content: space-around;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    row-gap: 50px;
 }
 .nav-link {
   display: inline-block;
