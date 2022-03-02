@@ -553,7 +553,7 @@ a:hover {
 
 /* media queries */
 
-@media only screen and (max-width: 100px) {
+@media  (min-width: 1000px) {
   .container{
   display: flex;
   flex-direction: column;
