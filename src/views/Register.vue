@@ -130,19 +130,16 @@ p {
 .form-btn {
   cursor: pointer;
   transition: all 0.1s linear;
+  color: beige;
+  font-size: 20px;
+  font-weight: bold;
+
+  
 }
 
 .form-btn:hover {
   transform: scale(1.05);
 }
 
-.form-social-login {
-  display: flex;
-  justify-content: space-between;
-}
 
-.form-social-btn {
-  width: 45%;
-  color: #333;
-}
 </style>

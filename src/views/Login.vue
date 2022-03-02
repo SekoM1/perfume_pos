@@ -72,7 +72,7 @@ p {
     margin-top: 0;
     margin-bottom: 1rem;
     color: beige;
-    font-size: 600;
+    font-size: 20px;
 }
 .no-border {
   border-radius: 10px;
@@ -114,19 +114,15 @@ p {
 .form-btn {
   cursor: pointer;
   transition: all 0.1s linear;
+  color: beige;
+  font-size: 20px;
+  font-weight: bold;
+
+  
 }
 
 .form-btn:hover {
   transform: scale(1.05);
 }
 
-.form-social-login {
-  display: flex;
-  justify-content: space-between;
-}
-
-.form-social-btn {
-  width: 45%;
-  color: #333;
-}
 </style>

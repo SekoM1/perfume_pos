@@ -1,5 +1,6 @@
 <template>
   <div id="perfumes" class="contaier">
+    <!-- SORT ITEMS -->
     <div
       class="container d-flex justify-content-center mb-3 mt-5 pt-4 pb-4 p-4"
     >
@@ -36,6 +37,7 @@
           <option value="descending">Descending</option>
         </select>
       </div>
+      <!-- ADD PROD BUTTON -->
       <button
         type="button"
         class="btn btn-primary"
@@ -65,13 +67,14 @@
       </div>
     </div>
   </div>
+  <!-- ADD PRODUCT MODAL -->
   <div
     class="modal fade"
     id="addProductModal"
     tabindex="-1"
     aria-labelledby="#addProductModal"
     aria-hidden="true"
-  >
+   >
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -170,6 +173,7 @@
             class="card-btn"
             data-bs-toggle="modal"
             data-bs-target="#editProduct"
+            @submit="deleteProduct"
           >
             <img
               src="https://img.icons8.com/external-tanah-basah-detailed-outline-tanah-basah/25/000000/external-edit-user-interface-tanah-basah-detailed-outline-tanah-basah.png"
@@ -182,6 +186,7 @@
           </button>
         </div>
       </div>
+      <!-- UPDATE PRODUCT MODAL -->
     <div
       class="modal fade"
       id="editProduct"
@@ -225,7 +230,7 @@
                 type="text"
                 name="editPrice"
                 id="editPrice"
-                value="${product.price}"
+                value=""
               />
             </div>
             <div class="mb-3">
@@ -235,7 +240,7 @@
                 type="text"
                 name="editImg"
                 id="editImg"
-                value="${product.img}"
+                value=""
               />
             </div>
           </div>
@@ -273,6 +278,19 @@ export default {
     return {
       products: [],
     };
+  },
+  methods: {
+    deleteProduct(position) {
+  let confirmation = confirm(
+    "Are you sure you want to delete the selected product?"
+  );
+
+  if (confirmation) {
+    products.splice(position, 1);
+    localStorage.setItem("products", JSON.stringify(products));
+    readProducts(products);
+  }
+}
   },
   mounted() {
     if (localStorage.getItem("jwt")) {
@@ -328,13 +346,11 @@ h1 {
   width: 255px;
   margin-right: 20px;
 }
-/* .card-btn:hover{
-  transform: scale(1.5s);
-} */
+
 
 #products img {
-  height: 300px;
-  object-fit: contain;
+  height: 270px;
+  object-fit: scale-down;
 }
 
 .card {
@@ -343,12 +359,18 @@ h1 {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
   transform: scale(2s);
 }
+.card-img-top{
+  width: 100%;
+}
 * {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
 }
 .container{
-  display: inline-flex;
+    display: inline-flex;
+    align-content: stretch;
+    justify-content: space-around;
+    row-gap: 50px;
 }
 .nav-link {
   display: inline-block;
@@ -528,4 +550,17 @@ a:hover {
   transform: scale(1.05);
   box-shadow: 1px 1px rgba(0, 0, 0, 0.158);
 }
+
+/* media queries */
+
+@media only screen and (max-width: 100px) {
+  .container{
+  display: flex;
+  flex-direction: column;
+    align-content: stretch;
+    justify-content: space-around;
+    row-gap: 50px;
+  }
+  }
+
 </style>
