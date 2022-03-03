@@ -162,7 +162,7 @@
             value="1"
             id="addToCart"
           />
-          <button type="button" class="card-btn" onclick="addToCartProduct()">
+          <button type="button" class="btn btn-primary" onclick="addToCartProduct()">
             <img
               src="https://img.icons8.com/external-bartama-outline-64-bartama-graphic/25/000000/external-Cart-e-commerce-outline-bartama-outline-64-bartama-graphic.png"
             />
@@ -170,7 +170,7 @@
 
           <button
             type="button"
-            class="card-btn"
+            class="btn btn-primary"
             data-bs-toggle="modal"
             data-bs-target="#editProduct"
             @submit="deleteProduct"
@@ -179,7 +179,7 @@
               src="https://img.icons8.com/external-tanah-basah-detailed-outline-tanah-basah/25/000000/external-edit-user-interface-tanah-basah-detailed-outline-tanah-basah.png"
             />
           </button>
-          <button type="button" class="card-btn" onclick="deleteProduct()">
+          <button type="button" class="btn btn-primary" onclick="deleteProduct()">
             <img
               src="https://img.icons8.com/dotty/25/000000/filled-trash.png"
             />
@@ -365,14 +365,10 @@ h1 {
   object-fit: cover;
   
 }
-.card-btn{
+/* .btn .btn-primary{
   border: none;
   background: none;
-}
-.card-btn:hover{
-  color: #b626aa;
-  background: black;
-}
+} */
 * {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
