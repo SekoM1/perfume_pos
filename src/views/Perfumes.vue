@@ -365,10 +365,7 @@ h1 {
   object-fit: cover;
   
 }
-/* .btn .btn-primary{
-  border: none;
-  background: none;
-} */
+
 * {
   font-family: "Poppins", sans-serif;
   font-weight: 700;

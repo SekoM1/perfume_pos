@@ -49,6 +49,13 @@ export default {};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  
+}
+header{
+  border-bottom: none;
+  position: fixed;
+  z-index: 2;
+  top:0;
 }
 
 a {
