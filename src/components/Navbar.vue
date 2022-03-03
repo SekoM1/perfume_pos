@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <header
-      class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
+      class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 "
     >
       <router-link class="navbar-logo" to="/">EAU DE PERFUME </router-link>
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
@@ -51,11 +51,13 @@ export default {};
   background-size: cover;
   
 }
-header{
+header .d-flex .flex-wrap{
   border-bottom: none;
   position: fixed;
   z-index: 2;
   top:0;
+  box-shadow: 2px 2px black;
+
 }
 
 a {
