@@ -1,13 +1,13 @@
 <template>
   <div class="container">
     <header
-      class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 "
+      class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4"
+      style="position: fixed; top: 0; background-color: beige"
     >
       <router-link class="navbar-logo" to="/">EAU DE PERFUME </router-link>
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        
         <li><a href="#" class="nav-link px-2 link-dark">Home</a></li>
-        
+
         <li>
           <router-link class="nav-link px-2 link-dark" to="/about">
             Brands</router-link
@@ -49,16 +49,14 @@ export default {};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  
 }
-header .d-flex .flex-wrap{
+header .d-flex .flex-wrap {
   border-bottom: none;
   position: fixed;
   z-index: 12;
-  top:0;
+  top: 0;
   box-shadow: 2px 2px black;
   background: beige;
-
 }
 
 a {
@@ -86,7 +84,7 @@ a:hover {
 }
 .btn-outline-primary {
   color: #b626aa !important;
-  border-color: #b626aa!important;
+  border-color: #b626aa !important;
   /* box-shadow: 1px 1px#53070dc2; */
 }
 .btn-outline-primary:hover {
