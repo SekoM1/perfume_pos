@@ -361,6 +361,9 @@ h1 {
 }
 .card-img-top{
   width: 100%;
+  height: 400px;
+  object-fit: cover;
+  
 }
 * {
   font-family: "Poppins", sans-serif;
@@ -371,6 +374,7 @@ h1 {
     align-content: stretch;
     justify-content: space-around;
     row-gap: 50px;
+    flex-wrap: wrap;
 }
 .nav-link {
   display: inline-block;
