@@ -1,5 +1,5 @@
 <template>
-   <div class="card">
+  <div class="card">
           <img src="${product.img}" class="card-img-top" alt="${product.title}">
           <div class="card-body">
             <h5 class="card-title">${product.title}</h5>
@@ -19,7 +19,7 @@
 
 <script>
 export default {
-   
+  
   data() {
     return {
       products: [

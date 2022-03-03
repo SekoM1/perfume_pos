@@ -46,7 +46,6 @@
       >
         Add Product
       </button>
-      <!-- cart -->
 
       <button
         type="button"
@@ -85,33 +84,47 @@
             data-bs-dismiss="modal"
             aria-label="Close"
           ></button>
+            
         </div>
         <div class="modal-body">
           <div class="modal-content">
             <div class="modal-body">
               <div class="mb-3">
+          
                 <label for="addTitle" class="form-label">Title</label>
                 <input
                   class="form-control"
                   type="text"
                   name="addTitle"
                   id="addTitle"
+                  v-model= "title"
                 />
               </div>
               <div class="mb-3">
                 <label for="" class="form-label">Category</label>
-                <select class="form-select" name="addCategory" id="addCategory">
+                <select v-model= "category" class="form-select" name="addCategory" id="addCategory">
                   <option value="men">Men</option>
                   <option value="women">Women</option>
                 </select>
               </div>
               <div class="mb-3">
-                <label for="addPrice" class="form-label">Price</label>
+                <label for= "addPrice" class="form-label">Price</label>
                 <input
                   class="form-control"
                   type="text"
                   name="addPrice"
                   id="addPrice"
+                  v-model= "price"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="addDescription" class="form-label">description</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="addDescription"
+                  id="addDescription"
+                  v-model= "description"
                 />
               </div>
               <div class="mb-3">
@@ -121,6 +134,7 @@
                   type="text"
                   name="addImg"
                   id="addImg"
+                  v-model= "img"
                 />
               </div>
             </div>
@@ -136,7 +150,7 @@
                 type="button"
                 class="btn btn-primary"
                 data-bs-dismiss="modal"
-                onclick="createProduct()"
+                @click= "createProduct()"
               >
                 Create Product
               </button>
@@ -162,7 +176,7 @@
             value="1"
             id="addToCart"
           />
-          <button type="button" class="btn btn-outline" onclick="addToCartProduct()">
+          <button type="button" class="card-btn" @click="addToCartProduct()">
             <img
               src="https://img.icons8.com/external-bartama-outline-64-bartama-graphic/25/000000/external-Cart-e-commerce-outline-bartama-outline-64-bartama-graphic.png"
             />
@@ -170,16 +184,16 @@
 
           <button
             type="button"
-            class="btn btn-outline"
+            class="card-btn"
             data-bs-toggle="modal"
             data-bs-target="#editProduct"
-            @submit="deleteProduct"
+            @submit="deleteProduct()"
           >
             <img
               src="https://img.icons8.com/external-tanah-basah-detailed-outline-tanah-basah/25/000000/external-edit-user-interface-tanah-basah-detailed-outline-tanah-basah.png"
             />
           </button>
-          <button type="button" class="btn btn-outline" onclick="deleteProduct()">
+          <button type="button" class="card-btn" onclick="deleteProduct()">
             <img
               src="https://img.icons8.com/dotty/25/000000/filled-trash.png"
             />
@@ -256,7 +270,7 @@
               type="button"
               class="btn btn-primary"
               data-bs-dismiss="modal"
-              onclick="updateProduct()"
+              @click="updateProduct()"
             >
               Save changes
             </button>
@@ -285,21 +299,14 @@ export default {
   data() {
     return {
       products: [],
+      title: "",
+      category: "",
+      description: "",
+      img: "",
+      price: ""
     };
   },
-  methods: {
-    deleteProduct(position) {
-  let confirmation = confirm(
-    "Are you sure you want to delete the selected product?"
-  );
 
-  if (confirmation) {
-    products.splice(position, 1);
-    localStorage.setItem("products", JSON.stringify(products));
-    readProducts(products);
-  }
-}
-  },
   mounted() {
     if (localStorage.getItem("jwt")) {
       fetch("https://pointofsale-api.herokuapp.com/products", {
@@ -312,23 +319,6 @@ export default {
         .then((response) => response.json())
         .then((json) => {
           this.products = json;
-          this.products.forEach(async (product) => {
-            await fetch(
-              "https://pointofsale-api.herokuapp.com/products" +
-                product.created_by,
-              {
-                method: "GET",
-                headers: {
-                  "Content-type": "application/json; charset=UTF-8",
-                  Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-                },
-              }
-            )
-              .then((response) => response.json())
-              .then((json) => {
-                product.created_by = json.title;
-              });
-          });
         })
         .catch((err) => {
           alert("User not logged in");
@@ -338,6 +328,38 @@ export default {
       this.$router.push({ name: "Login" });
     }
   },
+  methods: {
+    //Create product
+    createProduct() {
+      if (!localStorage.getItem("jwt")) {
+        alert("User not logged in");
+        return this.$router.push({ name: "Login" });
+      };
+      fetch("https://pointofsale-api.herokuapp.com/products", {
+        method: "POST",
+        body: JSON.stringify({
+          title: this.title,
+          category: this.category,
+          description: this.description,
+          img: this.img,
+          price: this.price,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          alert("Product Created");
+          this.$router.push({ name: "Perfumes" });
+        })
+        .catch((err) => {
+          alert(err);
+        });
+    },
+  },
+  
 };
 </script>
 
@@ -373,7 +395,14 @@ h1 {
   object-fit: cover;
   
 }
-
+.card-btn{
+  border: none;
+  background: none;
+}
+.card-btn:hover{
+  color: #b626aa;
+  background: black;
+}
 * {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
@@ -394,10 +423,6 @@ h1 {
 }
 
 /* add product */
-.btn-outline{
-  border-color: #b626aa;
-  color: #000;
-}
 .btn-primary {
   background-color: #b626aa;
   border: none;
@@ -409,19 +434,6 @@ h1 {
   color: #b626aa;
   transform: scale(1.05);
   box-shadow: 1px 1px rgba(0, 0, 0, 0.158);
-}
-.btn-outline {
-  background: #faf9f9 !important;
-  border: none !important;;
-  margin-left: 20px;
-  color: black;
-  box-shadow: 1px 1px rgba(0, 0, 0, 0.158)
-}
-.btn-outline:hover {
-  background-color:#b626aa !important;
-  color: #000000;
-  transform: scale(1.05);
-  ;
 }
 
 /* media queries */
