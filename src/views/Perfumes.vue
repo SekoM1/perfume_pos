@@ -365,6 +365,10 @@ h1 {
   object-fit: cover;
   
 }
+.card-btn{
+  border: none;
+  background: none;
+}
 * {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
