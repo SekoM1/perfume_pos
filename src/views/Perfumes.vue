@@ -405,14 +405,14 @@ h1 {
   transform: scale(1.05);
   box-shadow: 1px 1px rgba(0, 0, 0, 0.158);
 }
-.btn-primary {
+.btn-outline {
   background: #faf9f9;
   border: none;
   margin-left: 20px;
   color: black;
   box-shadow: 1px 1px rgba(0, 0, 0, 0.158)
 }
-.btn-primary:hover {
+.btn-outline:hover {
   background-color:#b626aa;
   color: #000000;
   transform: scale(1.05);
