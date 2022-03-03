@@ -75,8 +75,8 @@ a:hover {
   transform: scale(1.05);
 }
 .btn-outline-primary {
-  color: #b626aa;
-  border-color: #b626aa;
+  color: #b626aa !important;
+  border-color: #b626aa!important;
   /* box-shadow: 1px 1px#53070dc2; */
 }
 .btn-outline-primary:hover {
