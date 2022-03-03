@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <header
-      id="seko" class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4"
+      id="seko" class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-between py-3 mb-4"
       
     >
       <router-link class="navbar-logo" to="/">EAU DE PERFUME </router-link>
