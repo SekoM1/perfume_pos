@@ -162,7 +162,7 @@
             value="1"
             id="addToCart"
           />
-          <button type="button" class="btn btn-primary" onclick="addToCartProduct()">
+          <button type="button" class="btn btn-outline" onclick="addToCartProduct()">
             <img
               src="https://img.icons8.com/external-bartama-outline-64-bartama-graphic/25/000000/external-Cart-e-commerce-outline-bartama-outline-64-bartama-graphic.png"
             />
@@ -170,7 +170,7 @@
 
           <button
             type="button"
-            class="btn btn-primary"
+            class="btn btn-outline"
             data-bs-toggle="modal"
             data-bs-target="#editProduct"
             @submit="deleteProduct"
@@ -179,7 +179,7 @@
               src="https://img.icons8.com/external-tanah-basah-detailed-outline-tanah-basah/25/000000/external-edit-user-interface-tanah-basah-detailed-outline-tanah-basah.png"
             />
           </button>
-          <button type="button" class="btn btn-primary" onclick="deleteProduct()">
+          <button type="button" class="btn btn-outline" onclick="deleteProduct()">
             <img
               src="https://img.icons8.com/dotty/25/000000/filled-trash.png"
             />
@@ -404,6 +404,19 @@ h1 {
   color: #b626aa;
   transform: scale(1.05);
   box-shadow: 1px 1px rgba(0, 0, 0, 0.158);
+}
+.btn-primary {
+  background: #faf9f9;
+  border: none;
+  margin-left: 20px;
+  color: black;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.158)
+}
+.btn-primary:hover {
+  background-color:#b626aa;
+  color: #000000;
+  transform: scale(1.05);
+  ;
 }
 
 /* media queries */
