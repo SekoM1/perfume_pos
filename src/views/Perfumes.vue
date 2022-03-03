@@ -369,6 +369,10 @@ h1 {
   border: none;
   background: none;
 }
+.card-btn:hover{
+  color: #b626aa;
+  background: black;
+}
 * {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
