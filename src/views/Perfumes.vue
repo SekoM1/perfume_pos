@@ -389,6 +389,10 @@ h1 {
 }
 
 /* add product */
+.btn-outline{
+  border-color: #b626aa;
+  color: #000;
+}
 .btn-primary {
   background-color: #b626aa;
   border: none;
