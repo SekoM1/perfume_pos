@@ -406,14 +406,14 @@ h1 {
   box-shadow: 1px 1px rgba(0, 0, 0, 0.158);
 }
 .btn-outline {
-  background: #faf9f9;
-  border: none;
+  background: #faf9f9 !important;
+  border: none !important;;
   margin-left: 20px;
   color: black;
   box-shadow: 1px 1px rgba(0, 0, 0, 0.158)
 }
 .btn-outline:hover {
-  background-color:#b626aa;
+  background-color:#b626aa !important;
   color: #000000;
   transform: scale(1.05);
   ;
