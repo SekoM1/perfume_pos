@@ -80,9 +80,9 @@ a:hover {
   border-color: #b626aa!important;
   /* box-shadow: 1px 1px#53070dc2; */
 }
-.btn-outline-primary:hover {
-  background-color: #b626aa;
-  color: rgb(8, 8, 8);
+.btn-outline:hover {
+  background-color: #b626aa !important;
+  color: rgb(8, 8, 8) !important;
   transform: scale(1.05);
 }
 </style>

@@ -268,12 +268,20 @@
 
   ;
   <Footer/>
+   <div class="half">
+      <Filters
+        :filterPosts="filterPosts"
+        :search="search"
+        :filteredPosts="filteredPosts"
+      />
+    </div>
 </template>
 
 <script>
 import Footer from "../components/Footer.vue";
+
 export default {
-  components: { Footer },
+  components: { Footer ,},
   data() {
     return {
       products: [],
