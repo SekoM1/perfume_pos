@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <header
-      class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4"
-      style="position: fixed; top: 0; background-color: beige"
+      id="seko" class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4"
+      
     >
       <router-link class="navbar-logo" to="/">EAU DE PERFUME </router-link>
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
@@ -50,7 +50,7 @@ export default {};
   background-repeat: no-repeat;
   background-size: cover;
 }
-header .d-flex .flex-wrap {
+#seko{
   border-bottom: none;
   position: fixed;
   z-index: 12;
