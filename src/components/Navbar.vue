@@ -53,10 +53,11 @@ export default {};
 #seko{
   border-bottom: none;
   position: fixed;
-  z-index: 12;
+  z-index: 300;
   top: 0;
   box-shadow: 2px 2px black;
   background: beige;
+  width: 100%;
 }
 
 a {
