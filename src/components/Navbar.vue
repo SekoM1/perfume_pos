@@ -54,9 +54,10 @@ export default {};
 header .d-flex .flex-wrap{
   border-bottom: none;
   position: fixed;
-  z-index: 2;
+  z-index: 12;
   top:0;
   box-shadow: 2px 2px black;
+  background: beige;
 
 }
 
